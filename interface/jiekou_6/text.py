@@ -7,3 +7,4 @@ wangcai=Dog()
 result=wangcai.get_tooth()
 print(result)
 
+# 测试
