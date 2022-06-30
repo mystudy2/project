@@ -1,0 +1,81 @@
+1、PDF中while循环的最后两个题目（1-三角形*；2-99乘法表）
+2、求100以内能被3整除的数，并将作为列表输出
+list1=[]
+for i in range(0,101):
+    if i%3==0:
+        list1.append(i)
+print(list1)
+3、列表[1,2,3,4,3,4,2,5,5,8,9,7],将此列表去重，得到一个唯一元素的了列表
+oldList=[1,2,3,4,3,4,2,5,5,8,9,7]
+newList=[]
+for i in range(0,len(oldList)):
+    if oldList[i] not in newList:
+        newList.append(oldList[i])
+print(newList)
+4、求斐波那契数列 1 1 2 3 5 8 13
+list1=[1,1]
+for i in range(0,11):
+    list1.append(list1[len(list1)-2]+list1[len(list1)-1])
+print(list1)
+
+
+
+5、求100以内的质数（只能被1和它本身整除）
+list=[]
+for i in range(2,101):
+    for j in range(2,i): #比如76 则不可以被1和76整除 所以区间为 2到75
+        if i%j==0:
+            break
+    else:
+       list.append(i)
+print(list)
+
+# num=int(input('inptut your num:'))
+# for i in range(2,num):
+#     if num%i==0:
+#         print(f'{num} is not a 质数')
+#         break
+# else:
+#     print(f'{num} is  a 质数')
+6、有一堆字符串“aabbbcddef”打印出不重复的字符串结果：cef
+str='aabbbcddef'
+for i in str:
+    if str.count(i)<=1:
+        print(i,end='')
+7、有一堆字符串，“welcome to super&Test”,打印出superTest，不能查字符的索引
+str='welcome to super&Test'
+list1=str.split(" ")
+for i in list1:
+    list2=i.split("&")
+    if len(list2)>1:
+        str2="".join(list2)
+print(str2)
+8、有一堆字符串，“welcome to super&Test”,打印出tseT&repus ot .....全部单词原位置反转
+# str1=str[::-1]
+i=len(str)-1
+while i>=0:
+    print(str[i],end='')
+    i-=1
+
+str='welcome to super&Tes'
+list1=list(str)
+list1.reverse()
+str2="".join(list1)
+print(str2)
+
+str='welcome to super&Tes'
+list1=list(str)
+str2=''
+for i in range(len(list1)):
+    str2+=list1.pop()
+print(str2)
+
+
+9、有一堆字符串，"abcdef",将收尾反转，结果：fedcba，不能使用现有的函数或方法，自己写算法实现
+10、有一堆字符串，“aabbbccddef”,输出abcdef
+str='aabbbccddef'
+str1 = ''
+for i in range(0,len(str)):
+    if str[i] not in str1:
+        str1+=str[i]
+print(str1)
