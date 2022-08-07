@@ -1,10 +1,12 @@
-class Dog():
-    __tooth=10
-    @classmethod
-    def get_tooth(cls):
-        return cls.__tooth
-wangcai=Dog()
-result=wangcai.get_tooth()
-print(result)
+##################################################################
+import requests
+urlstr='https://www.wanandroid.com/user/login'
+payload={"username":"lily","password":'123456'}
+re=requests.post(url=urlstr,data=payload)
+r2=requests.get('https://wanandroid.com/lg/todo/list/0',cookies=re.cookies)
+print(r2.text)
 
-# 测1试
+# print(re.cookies)
+# header2={
+#     "cookie":re.cookies
+# }
